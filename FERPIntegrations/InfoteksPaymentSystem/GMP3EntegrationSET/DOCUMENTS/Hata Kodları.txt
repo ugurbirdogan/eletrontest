@@ -1,0 +1,360 @@
+
+//Hbyte group Lbyte error code
+#define	EOKC_SUCCESS_RESP			"00"
+#define	EOKC_SUCCESS				0
+#define	E_GENELGRP				100				//GENEL grubu
+#define EOKC_SVCUSER_NOTSALE			(E_GENELGRP+1)			//Servis satýþ yapamaz
+#define EOKC_DONTFISCALOPR			(E_GENELGRP+2)			//Mali Ýþlem Yapýlamaz
+#define EOKC_MUSTTAKEZREP			(E_GENELGRP+3)			//Z Raporu Alýnmalýdýr
+#define EOKC_MUSTTAKEZREPBEFOREDAY		(E_GENELGRP+4)			//Önceki güne ait Fiþler için Z Raporu Alýnmalýdýr
+#define EOKC_DATAFILESDELETED			(E_GENELGRP+5)			//Veri Dosyalarý Silinmiþ
+#define EOKC_DONTSALES				(E_GENELGRP+6)			//Satýþ Yapamaz
+#define EOKC_NEEDPAPER				(E_GENELGRP+7)			//Kaðýt Bitti Kaðýt Takýnýz
+#define EOKC_NEEDCOMPLTBFRFMOPR			(E_GENELGRP+8)			//Önceki iþlemin tamamlanmasý gerekir
+#define EOKC_EMPTYBASKET			(E_GENELGRP+9)			//Sepet Boþ
+#define EOKC_AMOUNTOVERVOUCHER			(E_GENELGRP+10)			//Tutar Fiþ kesme maksimum deðerinden büyük fatura kesmelisin
+#define EOKC_AMOUNTOVERSALES			(E_GENELGRP+11)			//Tutar Ýþlem yapýlabilecek maksimum deðerden büyük
+#define EOKC_CANTCCARDSALES			(E_GENELGRP+12)			//Kredi Kartlý satýþ yapýlamadý
+#define EOKC_PRINTINITERROR			(E_GENELGRP+13)			//Printer init edilemedi
+#define EOKC_CANTCALCEVTDBHASH			(E_GENELGRP+14)			//Event db Hash Hesaplanamadý
+#define EOKC_NEEDTOTALAMT			(E_GENELGRP+15)			//Toplam tutar Gerekli
+#define EOKC_NEEDVATRATE			(E_GENELGRP+16)			//KDV oraný Gerekli
+#define EOKC_NEEDPAYTYPE			(E_GENELGRP+17)			//Ödeme Þekli Gerekli
+#define EOKC_NEEDSALESTYPE			(E_GENELGRP+18)			//Satýþ Þekli Gerekli
+#define EOKC_NEEDPROGRAMID			(E_GENELGRP+19)			//Program Id Gerekli
+#define EOKC_NEEDINVSERINO			(E_GENELGRP+20)			//Fatura Seri No Gerekli
+#define EOKC_NEEDRESPCODE			(E_GENELGRP+21)			//Mesajda Responce Kod yok
+#define EOKC_RESPCODEFAIL			(E_GENELGRP+22)			//Responce Code "00" dan farklý
+#define EOKC_NEEDVOUCHERINFO			(E_GENELGRP+23)			//Fiþ Bilgileri Gerekli	
+#define EOKC_LASTSTNOTVOUCHER			(E_GENELGRP+24)			//Tamamlanmamýþ iþlem Satýþ iþlemi Deðil
+#define EOKC_LASTSTNOTZREP			(E_GENELGRP+25)			//Tamamlanmamýþ iþlem Z Raporu Deðil
+#define EOKC_LASTSTNOTXREP			(E_GENELGRP+26)			//Tamamlanmamýþ iþlem X Raporu Deðil
+#define EOKC_INVSERINOUSED			(E_GENELGRP+27)			//Ayný Fatura Seri no kullanýmýþ
+#define EOKC_NEEDPRODCOUNT			(E_GENELGRP+28)			//Ürün Adet Gerekli
+#define EOKC_NEEDPRODCONTENT			(E_GENELGRP+29)			//Ürün Ýçerikleri Gerekli
+#define EOKC_AppNotFound			(E_GENELGRP+30)			//Geçersiz uygulama
+#define EOKC_AppNotResponse			(E_GENELGRP+31)			//Uygulamadan Cevap Gelmedi
+#define EOKC_DeviceIsTamper			(E_GENELGRP+32)			//Ciha tamper olmuþ
+#define EOKC_MESHDRILLED			(E_GENELGRP+33)			//MESH DElindi
+#define EOKC_PRNISBUSY				(E_GENELGRP+34)			//Yazýcý Meþgul
+#define EOKC_PRNDATAPACKERROR			(E_GENELGRP+35)			//Print Data Packet error
+#define EOKC_PRNFAIL				(E_GENELGRP+36)			//Print Fail
+#define EOKC_PRNNOTCOMPLETE			(E_GENELGRP+37)			//Print not complete
+#define EOKC_PRNFONTERR				(E_GENELGRP+38)			//Print Fon not Installed
+#define EOKC_PRNBUFFEROVERFLOW			(E_GENELGRP+39)			//Print Buffer overflow
+#define EOKC_ANOTHERTRNISWORKNG			(E_GENELGRP+40)			//Baþka Bir iþlem çalýþýyor
+#define EOKC_LOWBATTERY				(E_GENELGRP+41)			//Düþük Pi
+#define EOKC_INVALIDPRDDATA			(E_GENELGRP+42)			//Geçersiz Ürün Verisi
+#define EOKC_PRDTOTALSNOTEQUAL			(E_GENELGRP+43)			//Toplam Tutar ile Ürün Toplamlarý Eþit Deðil
+#define EOKC_NEEDPAYCONTENT			(E_GENELGRP+44)			//Döviz Ödeme Detay Gerekli
+#define EOKC_INVALIDPAYDATA			(E_GENELGRP+45)			//Ödeme Detay verileri geçersiz
+#define EOKC_SLSAMTNOTBEZERO			(E_GENELGRP+46)			//0 Tutarlý satýþ olamaz
+#define EOKC_PRNTOOHEAT				(E_GENELGRP+47)			//Print Error printer too heat
+#define EOKC_NEEDINFRECPT			(E_GENELGRP+48)			//Bilgi Fiþi Gerekli
+#define EOKC_MEMALLOCFAIL			(E_GENELGRP+49)			//memory allocation fail
+#define EOKC_FILEREADERR			(E_GENELGRP+50)			//File read Error
+#define EOKC_NEEDINVDATE			(E_GENELGRP+51)			//Fatura Tarihi Gerekli
+#define EOKC_INVLDINFRCPTYPE			(E_GENELGRP+52)			//Geçersiz Bilgi Fiþi Tipi
+#define EOKC_SLSAMTZEROCANTPROCESS		(E_GENELGRP+53)			//Satýþ tutarý '0', Ýþlem Yapýlamaz
+#define EOKC_SLSCONTINUECANTPROCESS		(E_GENELGRP+54)			//Satýþ var, Ýþlem Yapýlamaz
+#define EOKC_NEEDPODUCTPRICE			(E_GENELGRP+55)			//Ürün Fiyatý Gerekli
+#define EOKC_FISCALMGRISBUSY			(E_GENELGRP+56)			//Fiscal R Manager Meþgul , Baþka Bir Ýþleme iþleme Baþlamýþ
+#define EOKC_EMPTYPARAMGROUP			(E_GENELGRP+57)			//Cihaz seri numarasý TSM üzerinde herhangi bir parametre grubuna atanmamýþ.
+#define EOKC_NEEDUNIQUEID			(E_GENELGRP+58)			//Uniq Id alaný gerekli
+#define EOKC_NOTRANSONERP			(E_GENELGRP+59)			//Cihazýn devir iþlemi Ýnfoteks ERP üzerinde gerçekleþmemiþ.
+#define EOKC_SOCKETCONNERR			(E_GENELGRP+60)			//Socket Baðlantý hatasý
+#define EOKC_TRANSFAIL				(E_GENELGRP+61)			//Ýþlem Hatalý
+#define EOKC_POSALREADYACTIVATED		(E_GENELGRP+62)			//Cihaz daha önce aktif edilmiþ
+#define EOKC_TERMNONOTDEFINED			(E_GENELGRP+63)			//Terminal Tanýmlý Deðil
+#define EOKC_SOCKNOTREACHED			(E_GENELGRP+64)			//Socket ulaþýlamýyor
+#define EOKC_SOCKNOTREAD			(E_GENELGRP+65)			//Socket okuma hatasý
+#define EOKC_SOCKBINDERR			(E_GENELGRP+66)			//Socket Bind hatas
+#define EOKC_SOCK_LISTEN			(E_GENELGRP+67)			//Socket Listen hatas
+#define EOKC_SOCKSENDERR			(E_GENELGRP+68)			//Socket Send hatas
+#define EOKC_FILEDOWNERR			(E_GENELGRP+69)			//Dosya Ýndirme Hatasý
+#define EOKC_FILEOPENERR			(E_GENELGRP+70)			//Dosya Açma Hatasý
+#define EOKC_INVLDFILEERR			(E_GENELGRP+71)			//Geçersiz Dosya
+#define EOKC_APPVERSIONFAIL			(E_GENELGRP+72)			//Uygulama Güncelleme Baþarýsýz
+#define EOKC_FISNOINVALID			(E_GENELGRP+73)			//FM Fis numarasý Hatalý
+#define EOKC_ZNOINVALID				(E_GENELGRP+74)			//FM Z numarasý Hatalý
+#define EOKC_NOCONNECTION			(E_GENELGRP+75)			//Baðlantý Yok
+#define EOKC_FILEEXTRACTERR			(E_GENELGRP+76)			//Dosya Paketten çýkarma hatasý
+#define EOKC_FILENOTINZIP			(E_GENELGRP+77)			//Dosya Zipin Ýçinde Yok
+#define EOKC_LASTSTNOTMHREP			(E_GENELGRP+78)			//Tamamlanmamýþ iþlem X Raporu Deðil
+#define EOKC_FILENOTFOUND			(E_GENELGRP+79)			//File Not found
+#define EOKC_APPCANTRUN				(E_GENELGRP+80)			//Application Cannot run
+#define EOKC_SSLCONNERR				(E_GENELGRP+81)			//SSL Socket Baðlantý Hatasý
+#define EOKC_SSLCERTERR				(E_GENELGRP+82)			//SSL Sertifika hatasý
+#define EOKC_SSLCONTXTERR			(E_GENELGRP+83)			//SSL Context Hatasý
+#define EOKC_DATANOTFOUND			(E_GENELGRP+84)			//Data Not Found
+#define EOKC_NOFILEINVERS			(E_GENELGRP+85)			//NO File Ýn Vers info
+#define EOKC_FTPCONNFAIL			(E_GENELGRP+86)			//Ftp Conneccion error
+#define EOKC_INVALIDOPR				(E_GENELGRP+87)			//Invalid operation
+#define EOKC_INVALIDDATES			(E_GENELGRP+88)			//Tarihler geçersiz
+#define EOKC_FTPFILEOPENERR			(E_GENELGRP+89)			//Ftp dosya açma a
+#define EOKC_VERSINFREADERR			(E_GENELGRP+90)			//Versiypn Bilgidi okunamadý
+#define EOKC_FLANDAPPVERSNOTEQ			(E_GENELGRP+91)			//dosya ve uygulama parametre versiyonlarý farklý
+#define EOKC_SMALLERAPPVERS			(E_GENELGRP+92)			//Uygulama versiyonundan daha küçük bir versiyon
+#define EOKC_NEWAPPNOTVERIFIED			(E_GENELGRP+93)			//Yeni uygulama Doðrulanamadý
+#define EOKC_MGRUPDVERSMSGERR 			(E_GENELGRP+94)			//Dosya gunceleme bilgisi Managera gonderilemedi
+#define EOKC_NEEDINVOICEINF 			(E_GENELGRP+95)			//Fatura Bilgileri Gerekli
+#define EOKC_INCOMPRCPTTYPES 			(E_GENELGRP+96)			//Güncellenecek Fiþ Tipi Ýle Kaydedilecek Fiþ TÝpleri Uyumsuz
+#define EOKC_VERPROGIDNOTEQUAL 			(E_GENELGRP+97)			//SD Vers Program Id ler uyumsuz
+#define EOKC_VERNUMBERNOTEQUAL 			(E_GENELGRP+98)			//SD Vers, paket Dosya adý version ile versiyon dosyasýndaki versiyon numaralarý uyumsuz
+#define EOKC_VERFHASHNOTVERIFIED 		(E_GENELGRP+99)		  	//SD Vers, Dosya Hash Deðeri Doðrulanamadý
+#define EOKC_VERMAXAPPCOUNT 			(E_GENELGRP+100)		//SD Vers, Uygulama Adedi Maksimum deðerine ulaþtý
+#define EOKC_VERUNZIPERROR			(E_GENELGRP+101)		//Vers, Zipten  dosya çýkarma hatasý
+#define EOKC_OKCPRMINTEGRTYFAIL			(E_GENELGRP+102)		//OKC Parametre Bütünlük Hatasý
+#define EOKC_NEEDTERMINALID			(E_GENELGRP+103)		//Mesajda Terminal ID alaný Yok
+#define EOKC_NEEDMERCHID			(E_GENELGRP+104)		//Mesajda Merch ID alaný Yok
+#define EOKC_NEEDKCVVALS			(E_GENELGRP+105)		//Mesajda TREK KCV TRAK KACV alanlarý yok
+#define EOKC_UNKNOWNTERMINALID			(E_GENELGRP+106)		//Kayýtsýz Terminal Seri Numarasý
+#define EOKC_INVALIDPROCESS			(E_GENELGRP+107)		//Geçersiz Ýþlem
+#define EOKC_NOTUNIQUETRANSNO			(E_GENELGRP+108)		//Tekil Olmayan Sýra Numarasý
+#define EOKC_SYSTEMSTANDBY			(E_GENELGRP+109)		//GÝB Sistem Geçici olarak Kapalý
+#define EOKC_SYSTEMERROR			(E_GENELGRP+110)		//GÝB Sistem Hatasý
+#define EOKC_NEEDPARTDATA			(E_GENELGRP+111)		//Mesajda Part Datasý Yok
+#define EOKC_NEEDFILEID				(E_GENELGRP+112)		//Mesajda Dosya ID yok
+#define EOKC_NEEDMD5SUM				(E_GENELGRP+113)		//Mesajda MD5Sum yok
+#define EOKC_INVALIDVATRate			(E_GENELGRP+114)		//KDV Oranlarý Geçersiz
+#define EOKC_INVLDSLSEXTITMINDEX 		(E_GENELGRP+115)		//Sales Item Extra Urun Indexi Geçersiz
+#define EOKC_INVLDCERTNO 			(E_GENELGRP+116)		//Geçersiz Ýletiþim Sertifika Numarasý
+#define EOKC_SSLCONNWAIT			(E_GENELGRP+117)		//SSL Socket Baðlantýsý Açýlmaya Çalýþýlýyor Bekle
+#define EOKC_MUSTRENEWKEYS			(E_GENELGRP+118)		//Simetrik keylerin güncellenmesi gerekli
+#define EOKC_APPNOTREADYFORUPGRADE		(E_GENELGRP+119)		//Versiyon Öncesi Gün sonu iþlemine versiyon yapma cevabý dönmüþ
+#define EOKC_NEEDPRODUCTINFTYPE			(E_GENELGRP+120)		//Ürün Bilgi Fiþi Tipi Gerekli
+#define EOKC_NOTVERIFIEDTREKKCV			(E_GENELGRP+121)		//Ýlk Kayýt mesajýnda Trek Key Check Value uyuþmadý
+#define EOKC_NOTVERIFIEDTRAKKCV			(E_GENELGRP+122)		//Ýlk Kayýt mesajýnda Trak Key Check Value uyuþmadý
+#define EOKC_NOTVERIFIEDSERIALNO		(E_GENELGRP+123)		//Cevap mesajý seri no yok yada hatalý
+#define EOKC_NOTVERIFIEDTIME			(E_GENELGRP+124)		//Cevap mesajý zaman yok yada hatalý / sorgu mesajýndaki saatle ayný olmalý
+#define EOKC_NOTVERIFIEDTRANNO			(E_GENELGRP+125)		//Cevap mesajý iþlem sýra no yok yada hatalý / sorgu mesajýndaki sýra no ile ayný olmalý
+#define EOKC_NOTVERIFIEMSGTYPE			(E_GENELGRP+126)		//Cevap mesajý mesaj tipi yok yada hatalý / sorgu mshtype | 0x00000400 ile OR 
+#define EOKC_READLENINVALID			(E_GENELGRP+127)		// 2048 den uzun data 
+#define EOKC_CRPTNEEDKURDATA			(E_GENELGRP+128)		//Kur Bilgileri Alaný hatasý
+#define EOKC_CRPTNEEDPARDATA			(E_GENELGRP+129)		//Parametre Bilgileri Alaný hatasý
+#define EOKC_NEEDTRANSNO			(E_GENELGRP+130)		//Parametre/Kur/Ýþlem Sýra No bulunamadý
+#define EOKC_NEEDTERMDATE			(E_GENELGRP+131)		//Terminal Tarihi Bulunamadý 	
+#define EOKC_NEEDTERMTIME			(E_GENELGRP+132)		//Terminal Saati Bulunamadý
+#define EOKC_NEEDFISCALNO			(E_GENELGRP+133)		//Fiscal No Bulunamadý
+#define EOKC_NEEDBANKRESPONSE			(E_GENELGRP+134)		//3rd Parti Banka Cevap mesajý bulunamadý
+#define EOKC_NEEDCONTRACTDATA			(E_GENELGRP+135)		// Katma Deðer Sözleþme Bilgisi Bulunamadý
+#define EOKC_NEEDESSALEDATA			(E_GENELGRP+136)		// Harici Sistem Satýþ Datasý Bulunamadý
+#define EOKC_NEEDPRODDATA			(E_GENELGRP+137)		// Ürün Liste Bilgisi Bulunamadý
+#define EOKC_NEEDTYPESDATA			(E_GENELGRP+138)		// Satýþ Tahsilat Tip Verisi Bulunamadý
+#define EOKC_NEEDFIRMSDATA			(E_GENELGRP+139)		// Fatura Kurumlarý Listesi Verisi Bulunamadý
+#define EOKC_SELLERNOTDEFINED			(E_GENELGRP+140)		// Satýcý Bilgisi Tanýmlý Deðil
+#define EOKC_DEVTYPENOTDEFINED			(E_GENELGRP+141)		// Cihaz Tipi Ýnfoteks ERP üzerinde tanýmlý deðil
+#define EOKC_DEVALREADYINSTOCK			(E_GENELGRP+142)		// Cihaz seri numrasý daha önce ERP stoðunda tanýmlanmýþ.
+#define EOKC_INVALIDPRDTYPE			(E_GENELGRP+143)		// Geçersz Ürün Tipi
+#define EOKC_OVERDEPLIMIT			(E_GENELGRP+144)		// KISIM Limit Deðeri Aþýldý
+#define EOKC_USERPERMERROR			(E_GENELGRP+145)		// Servis Personeli Yetki hatasý
+#define EOKC_NOTFOUNDM2MNO			(E_GENELGRP+146)		// M2M Hat Numarasý Bulunamadý
+#define EOKC_NOTFOUNDIMEINO			(E_GENELGRP+147)		// Modem IMEI Numarasý Bulunamadý
+#define EOKC_NOSCRAPONTSM			(E_GENELGRP+148)		// TSM de Hurda Kaydý Açýlmamýþ
+#define EOKC_NOSELLDEVICE			(E_GENELGRP+149)		// Cihazýn satýþý yapýlmamýþ
+#define EOKC_MODEMRECONNECT			(E_GENELGRP+150)		// Modem yeniden baðlantý 
+
+#define	E_CRYPTGRP				270				//CRYPTO grubu
+#define EOKC_CRYPTOINITERR			(E_CRYPTGRP+1)			//CRYPTO INIT edilemedi
+#define EOKC_CRPTKEYCONTERR			(E_CRYPTGRP+2)			//KEY CONTAINER Could not create
+#define EOKC_CRPTHASHCRTERR			(E_CRYPTGRP+3)			//HASH object Could not create
+#define EOKC_CRPTDERVKEYERR			(E_CRYPTGRP+4)			//Error during Derive Key
+#define EOKC_CRPTKEYSDONOTEXIST			(E_CRYPTGRP+5)			//No TREK & TRAK
+#define EOKC_CRPTKEYSNOTHEALTY			(E_CRYPTGRP+6)			//Device Certs Not Healty
+#define EOKC_CRPTHOSTSIGNVERERR			(E_CRYPTGRP+7)			//Sunucu Ýmzasý doðrulanamadý
+#define EOKC_CRPTCURRDATAVERERR			(E_CRYPTGRP+8)			//Kur Bilgileri imzasý doðrulama hatasý
+#define EOKC_CRPTPARADATAVERERR			(E_CRYPTGRP+9)			//Parametre Bilgileri imzasý Doðrulama hatasý
+#define EOKC_CRPTMESGDATAVERERR			(E_CRYPTGRP+10)			//Mesaj Doðrulama Alaný doðrulama hatasý
+#define EOKC_CRPTNEEDAUTHKEY			(E_CRYPTGRP+11)			//TRAK anahtar hatasý
+#define EOKC_CRPTNEEDENCRKEY			(E_CRYPTGRP+12)			//TRAK anahtar hatasý
+#define EOKC_CRPTNEEDHOSTSIGN			(E_CRYPTGRP+13)			//Sunucu Ýmzasý Alaný hatasý
+#define EOKC_CRPTNEEDKURSIGN			(E_CRYPTGRP+14)			//Kur Bilgileri imza alaný hatasý
+#define EOKC_CRPTNEEDPARSIGN			(E_CRYPTGRP+15)			//Parametre Bilgileri imza alaný hatasý
+#define EOKC_CRPTNEEDMSGSIGN			(E_CRYPTGRP+16)			//Mesaj Doðrulama Alaný hatasý
+#define EOKC_OKCPUBCERTNOTFOUND			(E_CRYPTGRP+17)			//OKC Sertifikasý Açýk Anahtarý bulunamadý
+
+#define	E_FMGRP					300				//Mali hafýza grubu
+#define EOKC_FM_READ				(E_FMGRP+20)			//fm okuma hatasý
+#define EOKC_FM_WRITE				(E_FMGRP+21)			//FM Yazma Hatasý
+#define EOKC_FM_SALESERROR			(E_FMGRP+22)			//FM Satýþ Tamamlanamadý
+#define EOKC_FM_NEWFMUSE			(E_FMGRP+23)			//Yeni FM Kullanýma Alýndý
+#define EOKC_FM_COMOPENERR			(E_FMGRP+24)			//FM  COM OPEN ERR
+#define EOKC_FM_COMSENDERR			(E_FMGRP+25)			//FM  COM Send ERR
+#define EOKC_FM_COMRECVERR			(E_FMGRP+26)			//FM  COM recv ERR
+#define EOKC_FM_COMMERR				(E_FMGRP+27)			//FM iletiþim Hatasý 3 reset
+#define EOKC_FM_NOFM				(E_FMGRP+28)			//FM Takýlý Deðil 5 Reset
+#define EOKC_FM_COMHEADERERR			(E_FMGRP+29)			//FM Header Bilgisi Okumada hata
+#define EOKC_FM_COMREADLENERR			(E_FMGRP+30)			//FM Okunan uzunkuk verisi geçersiz
+#define EOKC_FM_COMCHECKSUMERR 			(E_FMGRP+31)			//FM okunan veri checksum hatasý
+#define EOKC_FM_CMANDINCOMPT			(E_FMGRP+32)			//FM Gönderilen ve alýnan kommandlar farklý
+#define EOKC_FM_COMSTARTBYTEERR			(E_FMGRP+33)			//FM Veri start okunamadý
+#define EOKC_FM_COMTIMEOUT			(E_FMGRP+34)			//FM Time out	
+#define EOKC_FM_LASTCOUNTERR			(E_FMGRP+35)			//FM Last Count CANT Read
+#define EOKC_FM_EKUNOERR			(E_FMGRP+36)			//FM EKÜ NO CANT Read
+#define EOKC_FMNOTRESPONCE			(E_FMGRP+37)			//FM Not Responce
+#define EOKC_FM_FAIL				(E_FMGRP+38)			//FM Operation Fail
+#define EOKC_FM_INVALIDOPR			(E_FMGRP+39)			//FM Invalid Operation
+#define EOKC_FM_PARAMETERERR			(E_FMGRP+40)			//FM Parameter Error
+#define EOKC_FM_NONFISCOPRLIMIT			(E_FMGRP+41)			//FM Günlük Mali Olmayan Fiþ Sýnýrýna ulaþýldý Z Raporu Alýnýz
+#define EOKC_FM_COMMSGLENNOTREAD		(E_FMGRP+42)			//FM Mesaj uzunluðu kadar okuma yapýlamadý, Mesajýn bir kýsmý okundu kalaný okunamýyor 
+#define EOKC_FM_ACCESERROR			(E_FMGRP+43)			//FM Serial port open , The access code is invalid
+#define EOKC_FM_PORTINUSE			(E_FMGRP+44)			//FM Serila port in use with another thread
+#define EOKC_FM_BUSY				(E_FMGRP+45)			//FM MESGUL
+
+#define	E_FMGRP_INTGRTY				380
+#define EOKC_FM_DMemIntegrity			(E_FMGRP_INTGRTY+1)		// FM Günlük hafýza Bütünlük saðlanamadý
+#define EOKC_FM_DMemErased			(E_FMGRP_INTGRTY+2)		// FM Günlük hafýza silinmiþ
+#define EOKC_FM_CertIntegrity			(E_FMGRP_INTGRTY+3)		// FM sertifika bütünlük hatasý
+#define EOKC_FM_DiskFull			(E_FMGRP_INTGRTY+4)		// FM Mali hafýza doldu
+#define EOKC_FM_DMemDiskFull			(E_FMGRP_INTGRTY+5)		// FM Günlük hafýza doldu
+#define EOKC_FM_CertVerifyFail			(E_FMGRP_INTGRTY+6)		// FM Cert Doðrulama hatasý(1,4,5,8,9)
+#define EOKC_FM_FMIntegrity			(E_FMGRP_INTGRTY+7)		// FM Bütünlük Hatasý
+#define EOKC_FM_OTHERDEVICEFM			(E_FMGRP_INTGRTY+8)		// FM Baska Cihaza Ait Mali Hafýza
+#define EOKC_FM_DeviceCertNotFound		(E_FMGRP_INTGRTY+9) 		// Cihaz sertifikasý bulunamadý(1)
+#define EOKC_FM_RootCertsNotValid		(E_FMGRP_INTGRTY+10) 		// Kök sertifikalar geçersiz(4,5)
+#define EOKC_FM_RootCertsErased			(E_FMGRP_INTGRTY+11) 		// Kök Sertifikalar Silinmiþ(4,5)
+#define EOKC_FM_TSMCertVerifyError 		(E_FMGRP_INTGRTY+12) 		// TSM Sertifikasý doðrulama Hatasý (3)
+#define EOKC_FM_GIBCertVerifyError 		(E_FMGRP_INTGRTY+13) 		// GIB sertifikasý doðrulama hatasý (8,9)
+#define EOKC_FM_CertUploadError 		(E_FMGRP_INTGRTY+14) 		// Sertifika Yükleme Hatasý 
+#define EOKC_FM_VersionError	 		(E_FMGRP_INTGRTY+15) 		// Versiyon uyumsuzluðu hatasý ÖKC ve MH versiyonu uyumsuz 
+#define EOKC_FM_MHCheckError	 		(E_FMGRP_INTGRTY+16) 		// Mali Hafýza Kontrol Hatasý
+
+#define	E_EKUGRP				 400				//Ekü  grubu
+#define EOKC_NotXThisPlace			(E_EKUGRP+39)			//Bu alanda X Yok Baþka biþey var
+#define EOKC_NotVouchThisPlace			(E_EKUGRP+40)			//Bu alanda Fiþ Yok Baþka biþey  var
+#define EOKC_VouchOverInZNo			(E_EKUGRP+41)			//Bu Z De Fiþ No Aþýldý
+#define EOKC_EKUCHECKSUMERR			(E_EKUGRP+42)			//Ekü Bütünlük Hatasý
+#define EOKC_ZNoLessInDiskZNo			(E_EKUGRP+43)			//Bu Z bendekinden küçük
+#define EOKC_ZNoGreatInDiskZNo			(E_EKUGRP+44)			//Bu Z bendekinden büyük
+#define EOKC_VouchLessInZNo			(E_EKUGRP+45)			//Fiþ No Bu Z nin ilk Fiþinden küçük
+#define EOKC_NOEKUINSERTED			(E_EKUGRP+46)			//ekü takýlý deðil
+#define EOKC_VHCLESSFIRSTSECTOR			(E_EKUGRP+47)			//Fiþ sektörü ilk fiþ sektöründen küçük
+#define EOKC_THRDPART_CNTOVER			(E_EKUGRP+48)			//üçüncü parti fiþ sayýsý 100 yi aþtý Z raporu almalýsýn
+#define EOKC_OFFSETNEGATIVE			(E_EKUGRP+49)			//negatif offset
+#define EOKC_EKU_FULL				(E_EKUGRP+50)			//Eku Doldu
+#define EOKC_EKU_Z_FULL				(E_EKUGRP+51)			//Ekü Z Kapasitesi Doldu
+#define EOKC_EKU_X_FULL				(E_EKUGRP+52)			//Ekü X Kapasitesi Doldu
+#define EOKC_EKUChanged				(E_EKUGRP+53)			//Ekü Deðiþtirilmiþ
+#define EOKC_SalesMustBeFirst			(E_EKUGRP+54)			//ilk Fiþ Satýþ Olmalýdýr
+#define EOKC_EKUEMPTY				(E_EKUGRP+55)			//Yeni Ekü Takýlmýþ
+#define EOKC_TIMECHANGED			(E_EKUGRP+56)			//Zaman Bilgisi Deðiþtirilmiþ
+#define EOKC_EKUBELONGTOANOTHER			(E_EKUGRP+57)			//Baþka kasaya ait ekü
+#define EOKC_OLDEKUINUSE			(E_EKUGRP+58)			//Eski Ekü Kullanýma alýndý
+#define EOKC_EKUCOMMERR				(E_EKUGRP+59)			//Ekü Ýletiþim Hatasý
+#define EOKC_EKUVOUCHERCANTREAD			(E_EKUGRP+60)			//Fiþ Eküden Okunamadý
+#define EOKC_EKUZNOTWRITE			(E_EKUGRP+61)			//Eküye Z Yazýlamadý
+#define EOKC_EKUXNOTWRITE			(E_EKUGRP+62)			//Eküye X Yazýlamadý
+#define EOKC_EKUFILECREATEERR			(E_EKUGRP+63)			//Ekü Disk Eriþim Hatasý
+#define EOKC_EKUREADERR				(E_EKUGRP+64)			//Ekü Disk Okuma Hatasý
+#define EOKC_EKUWRITEERR			(E_EKUGRP+65)			//Ekü Disk Yazma Hatasý
+#define EOKC_VHCRALRDYSAVED			(E_EKUGRP+66)			//Fiþ Zaten Kaydedilmiþ
+#define EOKC_XNOOVERTHISZ			(E_EKUGRP+67)			//X No Bu Z Deki X lerin Dýþýnda
+#define EOKC_EKUISLOCKED			(E_EKUGRP+68)			//Eku Kullanýmda
+#define EOKC_EKUALREADYCLOSED			(E_EKUGRP+69)			//Ekü Daha Önce Sonlandýrýlmýþ
+#define EOKC_EKUCLOSED				(E_EKUGRP+70)			//Bu Ekü Sonlandýrýlmýþ
+#define EOKC_EKUERRORONSETUP			(E_EKUGRP+71)			//EKu Kurulumunda sorun var
+#define EOKC_EKUCANTTAKEZFROMOLD		(E_EKUGRP+72)			//Eski Eküden Z Alacak Durumda deðilsin
+#define EOKC_EKUFISDATAERR			(E_EKUGRP+73)			//Ekü Fiþ Verisi Hatasý
+#define EOKC_TAKEZREP_INFCNTOVER		(E_EKUGRP+74)			//Z raporu alýnmalý z de Bilgi Fiþi adedi sýnýra ulaþmýþ	
+#define EOKC_RECEIPTNOTINFRCPT			(E_EKUGRP+75)			//Ýstenen Fiþ Bilgi Fiþi Deðil
+#define EOKC_SRCHDATEBEFOREKUINSDT		(E_EKUGRP+76)			//Ýstenilen Tarih EKU kurulum tarihinden daha eski
+#define EOKC_UNIQUEID_FULL			(E_EKUGRP+77)			//EKÜ Harici UniqueId deðeri Sona ulaþýldý , Yeni EKÜ Kurulumu yapýlmalý
+#define EOKC_UNIQIDNOTFOUND			(E_EKUGRP+78)			//UniqId EKÜye Kayýtlý Deðil
+#define EOKC_INVALIDUNIQUEID			(E_EKUGRP+79)			//UniqId Geçersiz, Sýrasý Geçmiþ veya Geçersiz No 
+#define EOKC_UNIQUEIDISNOTSALES			(E_EKUGRP+80)			//UniqId Satýþa dönmemiþ veya uniqId ile satýþ yapýlmamýþ
+
+#define	E_WARNGRP				600				//Uyarý grubu
+#define EOKC_W_EKULEFTFIST			(E_WARNGRP+1)			//Ekü Kalan Fiþ Kapasitesi 1000 in altýnda
+#define EOKC_W_FMBLOCKTODATE			(E_WARNGRP+2)			//Belirli Tarihe kadar iþlem yapmaya kapalý
+#define EOKC_W_POSNOTACTIVE			(E_WARNGRP+3)			//Cihaz Aktif Deðil
+#define EOKC_W_NOZREPFORSYNC			(E_WARNGRP+4)			//Sync Edilecek Z Raporu Yok
+#define EOKC_W_CHECKSUM_ERROR			(E_WARNGRP+5)			//Veri bütünlüðü yok
+#define EOKC_W_POSNOTGIBINIT			(E_WARNGRP+6)			//Cihaz Gib ilklendirilmesi yapýlmamýþ
+#define EOKC_W_NORECEIPTTOSYNC			(E_WARNGRP+7)			//Gönderilecek Fiþ Yok 
+#define EOKC_W_NOEVENTTOSYNC			(E_WARNGRP+8)			//Gönderilecek Olay Kaydý Yok
+#define EOKC_W_NOTALLOWED			(E_WARNGRP+9)			//Ýzin Verilmeyen Ýþlem
+#define EOKC_W_SIZEINVALID			(E_WARNGRP+10)			//Genel Veri Boyutu Geçersiz
+#define EOKC_W_COUNTINVALID			(E_WARNGRP+11)			//Genel Adet Geçersiz veya yetersiz
+#define EOKC_W_FOODPAYONLYALLOWFIS		(E_WARNGRP+12)			//Yemek ödeme iþlemi Fatura gibi satýþ tiplerine yapýlamaz sadece Fiþ için Yemek Ödemesi alýnabilir.
+#define EOKC_W_FOODPAYNOTALLWPRTIAL		(E_WARNGRP+13)			//Yemek ödeme iþlemi Parçalý ödemeyi desteklemez
+#define EOKC_W_INVLDRESPFROMPAYAPP 		(E_WARNGRP+14)			//Ödeme  Uygulamasýndan Geçersiz Yanýt Alýndý
+#define EOKC_W_FOODAPPNOTDEFINED 		(E_WARNGRP+15)			//Yemek Uygulamasý Tanýmlý deðil
+#define EOKC_W_PAYYAPPNOTOPENING 		(E_WARNGRP+16)			//Tanýmlý Uygulama Açýlmýyor 
+#define EOKC_W_PAYMENTNATCOMPLETE 		(E_WARNGRP+17)			//Ödeme Ýþlemi yapýlamadý
+
+#define	E_DBGRP					700				//DB hatagrubu
+#define EOKC_DBIntegrity			(E_DBGRP+1)			//Veritabaný bütünþüðü saðlanamadý
+#define EOKC_DBEventDeleted			(E_DBGRP+2)			//olay kayýt dosyasý silinmiþ
+#define EOKC_DBEventIntegrity			(E_DBGRP+3)			//Olaykayýt DB bütünþüðü saðlanamadý
+#define EOKC_DBEVTCANTCREATED			(E_DBGRP+4)			//Olaykayýt DB oluþturulamadý
+#define EOKC_DBSALESDBDELETED			(E_DBGRP+5)			//Satýþ DB Silinmiþ
+#define EOKC_DBSALESCREATEDFIRST		(E_DBGRP+6)			//Satýþ DB Ýlk olulturuldu
+#define EOKC_DBEVENTEXEC			(E_DBGRP+7)			//Execute error
+#define EOKC_DBSAVESLSFAIL			(E_DBGRP+8)			//Satýþ db kaydý yapýlamadý
+#define EOKC_DBSLSIDREADFAIL			(E_DBGRP+9)			//Satýþ Id okuma hatasý
+#define EOKC_DBSLSREADFAIL			(E_DBGRP+10)			//Satýþ  okuma hatasý
+#define EOKC_DBSLSITMREADFAIL			(E_DBGRP+11)			//Satýþ  Kalemleri okuma hatasý
+#define EOKC_DBSLSSAVEFAIL			(E_DBGRP+12)			//DB Kaydý yapýlamadý
+
+#define	E_DTSGRP				800				//Desktop Set Grubu(DTS)
+#define EOKC_DTS_ExtOprDisabled			(E_DTSGRP+1)			//Cihaz Harici Ýþlemlere Kapalý
+#define EOKC_DTS_NeedVendorName			(E_DTSGRP+2)			//Cihaz Üretcic Markasý Eksik
+#define EOKC_DTS_NeedDevModel			(E_DTSGRP+3)			//Cihaz Üretcic Modeli Eksik
+#define EOKC_DTS_NeedDevSerial			(E_DTSGRP+4)			//Cihaz Seri no Eksik
+#define EOKC_DTS_NeedRandomBytes		(E_DTSGRP+5)			//Random bytler gerekli
+#define EOKC_DTS_NeedDriverVersion		(E_DTSGRP+6)			//Driver Versiyon Gerekli
+#define EOKC_DTS_NeedCryptogram			(E_DTSGRP+7)			//Criptogram Alaný Gerekli
+#define EOKC_DTS_NeedDeviceIndex		(E_DTSGRP+8)			//Harici Cihaz Ýndex Alaný Eksik
+#define EOKC_DTS_NeedKCV			(E_DTSGRP+9)			//Harici cihaz Kcv  gerekli
+#define EOKC_DTS_ECRInfoIncompatible		(E_DTSGRP+10)			//OKC bilgileri uymuyor
+#define EOKC_DTS_ExtInfoIncompatible		(E_DTSGRP+11)			//Ext Device bilgileri uymuyor
+#define EOKC_DTS_InvalidPairStep		(E_DTSGRP+12)			//Geçersiz Eþleþtirme isteði
+#define EOKC_DTS_NOTVERIFIEDKEYKCV		(E_DTSGRP+13)			//KEY KCV ler Farklý
+#define EOKC_DTS_MSGMUSTBEENCRYPTED		(E_DTSGRP+14)			//Bu Ýþlem Tipi Eçýk gönderime izin verilmiyor
+#define EOKC_DTS_EXTDEVNEEDPAIR			(E_DTSGRP+15)			//Harici Cihazýn Bu iþlemi yapabilmesi için Eþleþtirme yapmasý gerekli
+#define EOKC_DTS_COMOPENERR			(E_DTSGRP+16)			//DTS COM OPEN ERR
+#define EOKC_DTS_DUPLICATECODE			(E_DTSGRP+17)			// Kod Alaný Duplicate 
+#define EOKC_DTS_NeedPairUnique			(E_DTSGRP+18)			// Eþleþme Tekil Deðeri Yok 
+#define EOKC_DTS_READ				(E_DTSGRP+20)			//DTS okuma hatasý
+#define EOKC_DTS_WRITE				(E_DTSGRP+21)			//DTS Yazma Hatasý
+#define EOKC_DTS_SALESERROR			(E_DTSGRP+22)			//DTS Satýþ Tamamlanamadý
+#define EOKC_DTS_NEWFMUSE			(E_DTSGRP+23)			//Yeni DTS Kullanýma Alýndý
+#define EOKC_DTS_COMSENDERR			(E_DTSGRP+25)			//DTS COM Send ERR
+#define EOKC_DTS_COMRECVERR			(E_DTSGRP+26)			//DTS COM recv ERR
+#define EOKC_DTS_COMMERR			(E_DTSGRP+27)			//DTS iletiþim Hatasý 3 reset
+#define EOKC_DTS_NOFM				(E_DTSGRP+28)			//DTS Takýlý Deðil 5 Reset
+#define EOKC_DTS_COMHEADERERR			(E_DTSGRP+29)			//DTS Header Bilgisi Okumada hata
+#define EOKC_DTS_COMREADLENERR			(E_DTSGRP+30)			//DTS Okunan uzunkuk verisi geçersiz
+#define EOKC_DTS_COMCHECKSUMERR 		(E_DTSGRP+31)			//DTS okunan veri checksum hatasý
+#define EOKC_DTS_CMANDINCOMPT			(E_DTSGRP+32)			//DTS Gönderilen ve alýnan kommandlar farklý
+#define EOKC_DTS_COMSTARTBYTEERR		(E_DTSGRP+33)			//DTS Veri start okunamadý
+#define EOKC_DTS_COMTIMEOUT			(E_DTSGRP+34)			//DTS Time out	
+#define EOKC_DTS_LASTCOUNTERR			(E_DTSGRP+35)			//DTS Last Count CANT Read
+#define EOKC_DTS_EKUNOERR			(E_DTSGRP+36)			//DTS EKÜ NO CANT Read
+#define EOKC_DTSNOTRESPONCE			(E_DTSGRP+37)			//DTS Not Responce
+#define EOKC_DTS_FAIL				(E_DTSGRP+38)			//DTS Operation Fail
+#define EOKC_DTS_INVALIDOPR			(E_DTSGRP+39)			//DTS Invalid Operation
+#define EOKC_DTS_PARAMETERERR			(E_DTSGRP+40)			//DTS Parameter Error
+#define EOKC_DTS_NONFISCOPRLIMIT		(E_DTSGRP+41)			//DTS Günlük Mali Olmayan Fiþ Sýnýrýna ulaþýldý Z Raporu Alýnýz
+#define EOKC_DTS_COMMSGLENNOTREAD		(E_DTSGRP+42)			//DTS Mesaj uzunluðu kadar okuma yapýlamadý, Mesajýn bir kýsmý okundu kalaný okunamýyor 
+#define EOKC_DTS_ACCESERROR			(E_DTSGRP+43)			//DTS Serial port open , The access code is invalid
+#define EOKC_DTS_PORTINUSE			(E_DTSGRP+44)			//DTS Serila port in use with another thread
+#define EOKC_DTS_BUSY				(E_DTSGRP+45)			//DTS MESGUL
+
+//OKC Genel Kalýcý Hata Kodlarý
+typedef enum ESOKC_ERROR
+{
+	ESTOKC_TimeChanged			= 0x00000001,			//Zaman Deðiþtiril
+	ESTOKC_NoEKU				= 0x00000002,			//EKU Takýlý Deðil
+	ESTOKC_EmptyEKU				= 0x00000004,			//Boþ EKÜ
+	ESTOKC_EKUBelongAnother			= 0x00000008,			//Baþka Kasaya Ait EKÜ
+	ESTOKC_OldEKU				= 0x00000010,			//Eski EKÜ Takýlý
+	ESTOKC_EKUCommErr			= 0x00000020,			//EKÜ Ýletiþim Hatasý
+	ESTOKC_DBIntegrity			= 0x00000040,			//Veritabaný Bütünlüðü Saðlanamadý
+	ESTOKC_OKCPRMIntegrity			= 0x00000080,			//OKC Parametre bütünlüðü saðlanamadý
+	ESTOKC_FMBelongAnother			= 0x00000100,			//Baþka Cihaza Ait Mali Hafýza
+	ESTOKC_FMDailyMemIntegrity		= 0x00000200,			//Günlük Hafýza Bütünlük Hatasý
+	ESTOKC_FMDailyMemErased			= 0x00000400,			//Günlük Hafýza Silindi
+};
+
+#endif

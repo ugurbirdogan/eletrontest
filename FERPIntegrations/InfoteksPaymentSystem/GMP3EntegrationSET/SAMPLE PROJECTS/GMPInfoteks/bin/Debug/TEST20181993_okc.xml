@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OKCPair xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SerialNo>TEST20181993</SerialNo>
+  <Port>COM5</Port>
+  <CommType>0</CommType>
+  <TimeOut>0</TimeOut>
+</OKCPair>

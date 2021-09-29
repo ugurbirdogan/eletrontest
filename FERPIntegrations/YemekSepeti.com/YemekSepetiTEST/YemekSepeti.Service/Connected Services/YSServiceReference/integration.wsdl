@@ -1,0 +1,1549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetMessage">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetMessageV2">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMessageV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessages">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMessagesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessagesV2">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMessagesV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMessagesV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessagesV3">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMessagesV3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMessagesV3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopMessagesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopMessagesV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopMessagesV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopMessagesV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MessageSuccessful">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="messageId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MessageSuccessfulResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MessageSuccessfulV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MessageSuccessfulV2Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderState" type="tns:OrderStates" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="OrderStates">
+        <s:restriction base="s:string">
+          <s:enumeration value="Approved" />
+          <s:enumeration value="Accepted" />
+          <s:enumeration value="Rejected" />
+          <s:enumeration value="Cancelled" />
+          <s:enumeration value="OnDelivery" />
+          <s:enumeration value="Delivered" />
+          <s:enumeration value="TechnicalRejected" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UpdateOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderState" type="tns:OrderStates" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectReasonId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrderV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateValeOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderState" type="tns:OrderStates" />
+            <s:element minOccurs="1" maxOccurs="1" name="prepareTime" nillable="true" type="tns:PrepareTimes" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="PrepareTimes">
+        <s:restriction base="s:string">
+          <s:enumeration value="Minutes_15" />
+          <s:enumeration value="Minutes_20" />
+          <s:enumeration value="Minutes_25" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UpdateValeOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateValeOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateValeOrderV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderState" type="tns:OrderStates" />
+            <s:element minOccurs="1" maxOccurs="1" name="prepareTime" nillable="true" type="tns:PrepareTimes" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectReasonId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateValeOrderV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateValeOrderV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRestaurantForOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRestaurantForOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetRestaurantForOrderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRestaurantListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRestaurantState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="restaurantState" type="tns:RestaurantStates" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="RestaurantStates">
+        <s:restriction base="s:string">
+          <s:enumeration value="Open" />
+          <s:enumeration value="Closed" />
+          <s:enumeration value="HugeDemand" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UpdateRestaurantStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRestaurantStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRestaurantOpen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRestaurantOpenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsRestaurantOpenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantStatusResult" type="tns:RestaurantStatusEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RestaurantStatusEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RestaurantName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanBeOpenedByRestaurant" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRestaurantStatusV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantStatusV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantStatusV2Result" type="tns:RestaurantStatusEntityV2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RestaurantStatusEntityV2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RestaurantName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanBeOpenedByRestaurant" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NextStateChange" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetRestaurantServiceTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceTime" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRestaurantServiceTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetRestaurantServiceTimeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenu">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMenuResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantPromotions">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRestaurantPromotionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantPromotionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantPointsAndComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantPointsAndCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantPointsAndCommentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPaymentTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRejectReasons">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRejectReasonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRejectReasonsResult" type="tns:ArrayOfRejectReason" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRejectReason">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RejectReason" nillable="true" type="tns:RejectReason" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RejectReason">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReasonId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReasonName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CultureId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CultureCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRestaurantDeliveryAreas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantDeliveryAreasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantDeliveryAreasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRestaurantDeliveryAreaState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="catalogName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="areaId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isOpen" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRestaurantDeliveryAreaStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRestaurantDeliveryAreaStateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Healthcheck">
+        <s:complexType />
+      </s:element>
+      <s:element name="HealthcheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HealthcheckResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantOrderString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eadres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trackingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRestaurantOrderStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRestaurantOrderStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWaitingApprovalOrderReport">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWaitingApprovalOrderReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWaitingApprovalOrderReportResult" type="tns:WaitingApprovalOrderReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WaitingApprovalOrderReport">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReportDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderList" type="tns:ArrayOfOrder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Order">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TrackingNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeliveryTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMessageSuccessfulSend" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RestaurantName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeSpan" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageV2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageV2" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageV2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageV2AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesV2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesV2" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesV2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesV2AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesV3SoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesV3" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesV3SoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesV3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesV3AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMessagesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMessagesV2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopMessagesV2" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMessagesV2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopMessagesV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTopMessagesV2AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="MessageSuccessfulSoapIn">
+    <wsdl:part name="parameters" element="tns:MessageSuccessful" />
+  </wsdl:message>
+  <wsdl:message name="MessageSuccessfulSoapOut">
+    <wsdl:part name="parameters" element="tns:MessageSuccessfulResponse" />
+  </wsdl:message>
+  <wsdl:message name="MessageSuccessfulAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="MessageSuccessfulV2SoapIn">
+    <wsdl:part name="parameters" element="tns:MessageSuccessfulV2" />
+  </wsdl:message>
+  <wsdl:message name="MessageSuccessfulV2SoapOut">
+    <wsdl:part name="parameters" element="tns:MessageSuccessfulV2Response" />
+  </wsdl:message>
+  <wsdl:message name="MessageSuccessfulV2AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderV2SoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrderV2" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderV2SoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderV2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderV2AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValeOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateValeOrder" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValeOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateValeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValeOrderAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValeOrderV2SoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateValeOrderV2" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValeOrderV2SoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateValeOrderV2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValeOrderV2AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetRestaurantForOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRestaurantForOrder" />
+  </wsdl:message>
+  <wsdl:message name="SetRestaurantForOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRestaurantForOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRestaurantForOrderAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantList" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantListAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRestaurantStateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRestaurantState" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRestaurantStateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRestaurantStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRestaurantStateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="IsRestaurantOpenSoapIn">
+    <wsdl:part name="parameters" element="tns:IsRestaurantOpen" />
+  </wsdl:message>
+  <wsdl:message name="IsRestaurantOpenSoapOut">
+    <wsdl:part name="parameters" element="tns:IsRestaurantOpenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsRestaurantOpenAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantStatusAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantStatusV2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantStatusV2" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantStatusV2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantStatusV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantStatusV2AuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetRestaurantServiceTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRestaurantServiceTime" />
+  </wsdl:message>
+  <wsdl:message name="SetRestaurantServiceTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRestaurantServiceTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRestaurantServiceTimeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantPromotionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantPromotions" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantPromotionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantPromotionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantPromotionsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantPointsAndCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantPointsAndComments" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantPointsAndCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantPointsAndCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantPointsAndCommentsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentTypesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRejectReasonsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRejectReasons" />
+  </wsdl:message>
+  <wsdl:message name="GetRejectReasonsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRejectReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRejectReasonsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantDeliveryAreasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantDeliveryAreas" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantDeliveryAreasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantDeliveryAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantDeliveryAreasAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRestaurantDeliveryAreaStateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRestaurantDeliveryAreaState" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRestaurantDeliveryAreaStateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRestaurantDeliveryAreaStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRestaurantDeliveryAreaStateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="HealthcheckSoapIn">
+    <wsdl:part name="parameters" element="tns:Healthcheck" />
+  </wsdl:message>
+  <wsdl:message name="HealthcheckSoapOut">
+    <wsdl:part name="parameters" element="tns:HealthcheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantOrderStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestaurantOrderString" />
+  </wsdl:message>
+  <wsdl:message name="GetRestaurantOrderStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestaurantOrderStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaitingApprovalOrderReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWaitingApprovalOrderReport" />
+  </wsdl:message>
+  <wsdl:message name="GetWaitingApprovalOrderReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWaitingApprovalOrderReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWaitingApprovalOrderReportAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="IntegrationSoap">
+    <wsdl:operation name="GetMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets top one unreaded messages in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageSoapIn" />
+      <wsdl:output message="tns:GetMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageV2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets top one unreaded messages in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageV2SoapIn" />
+      <wsdl:output message="tns:GetMessageV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets all unreaded messages in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessagesSoapIn" />
+      <wsdl:output message="tns:GetAllMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessagesV2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets all unreaded messages in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessagesV2SoapIn" />
+      <wsdl:output message="tns:GetAllMessagesV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessagesV3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets all unreaded messages in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessagesV3SoapIn" />
+      <wsdl:output message="tns:GetAllMessagesV3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMessages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets top unreaded messages in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetTopMessagesSoapIn" />
+      <wsdl:output message="tns:GetTopMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMessagesV2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets top unreaded messages in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetTopMessagesV2SoapIn" />
+      <wsdl:output message="tns:GetTopMessagesV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MessageSuccessful">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set message received successfully.</wsdl:documentation>
+      <wsdl:input message="tns:MessageSuccessfulSoapIn" />
+      <wsdl:output message="tns:MessageSuccessfulSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MessageSuccessfulV2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set message received successfully</wsdl:documentation>
+      <wsdl:input message="tns:MessageSuccessfulV2SoapIn" />
+      <wsdl:output message="tns:MessageSuccessfulV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates order state.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOrderSoapIn" />
+      <wsdl:output message="tns:UpdateOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderV2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update order state with rejectReasonId.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOrderV2SoapIn" />
+      <wsdl:output message="tns:UpdateOrderV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValeOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates vale order state.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateValeOrderSoapIn" />
+      <wsdl:output message="tns:UpdateValeOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValeOrderV2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates vale order state.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateValeOrderV2SoapIn" />
+      <wsdl:output message="tns:UpdateValeOrderV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRestaurantForOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Redirects order another restaurant of the account.</wsdl:documentation>
+      <wsdl:input message="tns:SetRestaurantForOrderSoapIn" />
+      <wsdl:output message="tns:SetRestaurantForOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets all related restaurants list.</wsdl:documentation>
+      <wsdl:input message="tns:GetRestaurantListSoapIn" />
+      <wsdl:output message="tns:GetRestaurantListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurantState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates restaurant state.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateRestaurantStateSoapIn" />
+      <wsdl:output message="tns:UpdateRestaurantStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRestaurantOpen">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns whether a restaurant open or not.</wsdl:documentation>
+      <wsdl:input message="tns:IsRestaurantOpenSoapIn" />
+      <wsdl:output message="tns:IsRestaurantOpenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restaurant Status</wsdl:documentation>
+      <wsdl:input message="tns:GetRestaurantStatusSoapIn" />
+      <wsdl:output message="tns:GetRestaurantStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantStatusV2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Restaurant Status</wsdl:documentation>
+      <wsdl:input message="tns:GetRestaurantStatusV2SoapIn" />
+      <wsdl:output message="tns:GetRestaurantStatusV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRestaurantServiceTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets restaurant service time.</wsdl:documentation>
+      <wsdl:input message="tns:SetRestaurantServiceTimeSoapIn" />
+      <wsdl:output message="tns:SetRestaurantServiceTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the restaurant menu. The result objects includes products and options.</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuSoapIn" />
+      <wsdl:output message="tns:GetMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantPromotions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the restaurant promotions.</wsdl:documentation>
+      <wsdl:input message="tns:GetRestaurantPromotionsSoapIn" />
+      <wsdl:output message="tns:GetRestaurantPromotionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantPointsAndComments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the restaurant points and comments.</wsdl:documentation>
+      <wsdl:input message="tns:GetRestaurantPointsAndCommentsSoapIn" />
+      <wsdl:output message="tns:GetRestaurantPointsAndCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the all avaliable payment types.</wsdl:documentation>
+      <wsdl:input message="tns:GetPaymentTypesSoapIn" />
+      <wsdl:output message="tns:GetPaymentTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectReasons">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns available reject reasons</wsdl:documentation>
+      <wsdl:input message="tns:GetRejectReasonsSoapIn" />
+      <wsdl:output message="tns:GetRejectReasonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantDeliveryAreas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the all delivery areas of restaurant</wsdl:documentation>
+      <wsdl:input message="tns:GetRestaurantDeliveryAreasSoapIn" />
+      <wsdl:output message="tns:GetRestaurantDeliveryAreasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurantDeliveryAreaState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates restaurant delivery area state.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateRestaurantDeliveryAreaStateSoapIn" />
+      <wsdl:output message="tns:UpdateRestaurantDeliveryAreaStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Healthcheck">
+      <wsdl:input message="tns:HealthcheckSoapIn" />
+      <wsdl:output message="tns:HealthcheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantOrderString">
+      <wsdl:input message="tns:GetRestaurantOrderStringSoapIn" />
+      <wsdl:output message="tns:GetRestaurantOrderStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaitingApprovalOrderReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets tabgida waiting orders in XML format.</wsdl:documentation>
+      <wsdl:input message="tns:GetWaitingApprovalOrderReportSoapIn" />
+      <wsdl:output message="tns:GetWaitingApprovalOrderReportSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegrationSoap" type="tns:IntegrationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMessageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageV2">
+      <soap:operation soapAction="http://tempuri.org/GetMessageV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMessageV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <soap:operation soapAction="http://tempuri.org/GetAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllMessagesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessagesV2">
+      <soap:operation soapAction="http://tempuri.org/GetAllMessagesV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllMessagesV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessagesV3">
+      <soap:operation soapAction="http://tempuri.org/GetAllMessagesV3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllMessagesV3AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMessages">
+      <soap:operation soapAction="http://tempuri.org/GetTopMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTopMessagesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMessagesV2">
+      <soap:operation soapAction="http://tempuri.org/GetTopMessagesV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTopMessagesV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessageSuccessful">
+      <soap:operation soapAction="http://tempuri.org/MessageSuccessful" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MessageSuccessfulAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessageSuccessfulV2">
+      <soap:operation soapAction="http://tempuri.org/MessageSuccessfulV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MessageSuccessfulV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderV2">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrderV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOrderV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValeOrder">
+      <soap:operation soapAction="http://tempuri.org/UpdateValeOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateValeOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValeOrderV2">
+      <soap:operation soapAction="http://tempuri.org/UpdateValeOrderV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateValeOrderV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRestaurantForOrder">
+      <soap:operation soapAction="http://tempuri.org/SetRestaurantForOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetRestaurantForOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantList">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRestaurantListAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurantState">
+      <soap:operation soapAction="http://tempuri.org/UpdateRestaurantState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateRestaurantStateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRestaurantOpen">
+      <soap:operation soapAction="http://tempuri.org/IsRestaurantOpen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsRestaurantOpenAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantStatus">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRestaurantStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantStatusV2">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantStatusV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRestaurantStatusV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRestaurantServiceTime">
+      <soap:operation soapAction="http://tempuri.org/SetRestaurantServiceTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetRestaurantServiceTimeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap:operation soapAction="http://tempuri.org/GetMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMenuAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantPromotions">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantPromotions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRestaurantPromotionsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantPointsAndComments">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantPointsAndComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRestaurantPointsAndCommentsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentTypes">
+      <soap:operation soapAction="http://tempuri.org/GetPaymentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPaymentTypesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectReasons">
+      <soap:operation soapAction="http://tempuri.org/GetRejectReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRejectReasonsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantDeliveryAreas">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantDeliveryAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRestaurantDeliveryAreasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurantDeliveryAreaState">
+      <soap:operation soapAction="http://tempuri.org/UpdateRestaurantDeliveryAreaState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateRestaurantDeliveryAreaStateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Healthcheck">
+      <soap:operation soapAction="http://tempuri.org/Healthcheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantOrderString">
+      <soap:operation soapAction="http://tempuri.org/GetRestaurantOrderString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaitingApprovalOrderReport">
+      <soap:operation soapAction="http://tempuri.org/GetWaitingApprovalOrderReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWaitingApprovalOrderReportAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegrationSoap12" type="tns:IntegrationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMessageAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageV2">
+      <soap12:operation soapAction="http://tempuri.org/GetMessageV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMessageV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllMessagesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessagesV2">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMessagesV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllMessagesV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessagesV3">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMessagesV3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllMessagesV3AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMessages">
+      <soap12:operation soapAction="http://tempuri.org/GetTopMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTopMessagesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMessagesV2">
+      <soap12:operation soapAction="http://tempuri.org/GetTopMessagesV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTopMessagesV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessageSuccessful">
+      <soap12:operation soapAction="http://tempuri.org/MessageSuccessful" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MessageSuccessfulAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessageSuccessfulV2">
+      <soap12:operation soapAction="http://tempuri.org/MessageSuccessfulV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MessageSuccessfulV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderV2">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOrderV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateOrderV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValeOrder">
+      <soap12:operation soapAction="http://tempuri.org/UpdateValeOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateValeOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValeOrderV2">
+      <soap12:operation soapAction="http://tempuri.org/UpdateValeOrderV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateValeOrderV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRestaurantForOrder">
+      <soap12:operation soapAction="http://tempuri.org/SetRestaurantForOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetRestaurantForOrderAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantList">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRestaurantListAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurantState">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRestaurantState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateRestaurantStateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRestaurantOpen">
+      <soap12:operation soapAction="http://tempuri.org/IsRestaurantOpen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsRestaurantOpenAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRestaurantStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantStatusV2">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantStatusV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRestaurantStatusV2AuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRestaurantServiceTime">
+      <soap12:operation soapAction="http://tempuri.org/SetRestaurantServiceTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetRestaurantServiceTimeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap12:operation soapAction="http://tempuri.org/GetMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMenuAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantPromotions">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantPromotions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRestaurantPromotionsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantPointsAndComments">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantPointsAndComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRestaurantPointsAndCommentsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetPaymentTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPaymentTypesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectReasons">
+      <soap12:operation soapAction="http://tempuri.org/GetRejectReasons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRejectReasonsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantDeliveryAreas">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantDeliveryAreas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRestaurantDeliveryAreasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurantDeliveryAreaState">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRestaurantDeliveryAreaState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateRestaurantDeliveryAreaStateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Healthcheck">
+      <soap12:operation soapAction="http://tempuri.org/Healthcheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurantOrderString">
+      <soap12:operation soapAction="http://tempuri.org/GetRestaurantOrderString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaitingApprovalOrderReport">
+      <soap12:operation soapAction="http://tempuri.org/GetWaitingApprovalOrderReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWaitingApprovalOrderReportAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Integration">
+    <wsdl:port name="IntegrationSoap" binding="tns:IntegrationSoap">
+      <soap:address location="http://messaging.yemeksepeti.com/messagingwebservice/integration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegrationSoap12" binding="tns:IntegrationSoap12">
+      <soap12:address location="http://messaging.yemeksepeti.com/messagingwebservice/integration.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

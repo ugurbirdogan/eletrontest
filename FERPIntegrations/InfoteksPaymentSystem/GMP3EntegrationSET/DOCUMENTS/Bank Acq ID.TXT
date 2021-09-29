@@ -1,0 +1,27 @@
+﻿Acq ID , Bank Name
+1, Merkez Bankası
+12, HalkBank
+15, Vakıflar Bankası
+32, Türk Ekonomi Bankası
+46, Akbank
+59, Şeker Bank
+62, Garanti Bankası
+64, İş Bankası
+67, Yapı ve Kredi Bankası
+92, Citibank
+96, Turkish Bank
+103, ING Bank
+108, Fibabanka
+109, Turkland Bank
+111, Tekstil Bank
+123, QNB Finansbank
+124, HSBC
+125, Alternatif Bank
+134, Burger Bank A.Ş
+135, Denizbank
+143, Anadolu Bank
+146, Aktif Yatırım Bankası
+203, Odea Bank
+205, Albaraka Türk Katılım Bankası
+206, Kuvey Türk Katılım Bankası
+10, Ziraat Bankası

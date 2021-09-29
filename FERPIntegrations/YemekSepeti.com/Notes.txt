@@ -1,0 +1,9 @@
+Yemek Sepeti Demo; restricted to work only with ip 51.178.169.34
+
+http://messaging.yemeksepeti.com/messagingwebservice/integration.asmx
+
+https://www.yemeksepeti.com/ultimate-solutions-test-postakip
+User:  			ultimate
+Pass:  			36zn7mjn
+Katalog name : 	postakip
+Kategori id :	69f8d972-6470-4165-abc3-a7e9a6670aab

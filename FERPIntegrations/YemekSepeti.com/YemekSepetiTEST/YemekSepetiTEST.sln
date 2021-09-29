@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YemekSepetiTEST", "YemekSepetiTEST\YemekSepetiTEST.csproj", "{B6F980AF-765A-441F-A1F0-B3408532FF36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YemekSepeti.Service", "YemekSepeti.Service\YemekSepeti.Service.csproj", "{57825FB2-913A-468B-BBAB-B5488437ADE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6F980AF-765A-441F-A1F0-B3408532FF36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F980AF-765A-441F-A1F0-B3408532FF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F980AF-765A-441F-A1F0-B3408532FF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F980AF-765A-441F-A1F0-B3408532FF36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57825FB2-913A-468B-BBAB-B5488437ADE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57825FB2-913A-468B-BBAB-B5488437ADE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57825FB2-913A-468B-BBAB-B5488437ADE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57825FB2-913A-468B-BBAB-B5488437ADE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B315DC0-CA30-4E59-B24D-E784D6A07174}
+	EndGlobalSection
+EndGlobal
