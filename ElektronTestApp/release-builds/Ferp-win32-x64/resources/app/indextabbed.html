@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Main</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/electron-tabs/electron-tabs.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    webview {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="etabs-tabgroup">
+    <div class="etabs-tabs"></div>
+    <div class="etabs-buttons"></div>
+  </div>
+  <div class="etabs-views"></div>
+  <script>
+    const TabGroup = require('electron-tabs');
+    // const TabGroup = require("../index");
+
+    let tabGroup = new TabGroup({
+      newTab: {
+        title: 'New Tab'
+      }
+    });
+
+
+
+    tabGroup.addTab({
+      title: "Electron",
+      src: "http://electron.atom.io",
+      visible: true,
+      active: true
+    });
+
+  </script>
+  <script src="./main.js"></script>
+</body>
+
+</html>

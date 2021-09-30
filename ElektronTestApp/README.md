@@ -1,3 +1,17 @@
+# NOTES:
+
+https://github.com/electron/electron/blob/main/docs/tutorial/application-distribution.md#packaging-your-app-into-a-file
+
+# for use in npm scripts
+npm install electron-packager --save-dev
+
+# for use from cli
+npm install electron-packager -g
+
+electron-packager <sourcedir> <appname> --platform=win32 --arch=x64
+
+----------------------------------------------------------------------------------------------
+
 # electron-quick-start
 
 **Clone and run for a quick way to see Electron in action.**
